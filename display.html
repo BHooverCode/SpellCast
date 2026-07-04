@@ -9,9 +9,16 @@
     <body>
         <div id = "map"></div>
         <script>
-            var map = L.map('map').setView([0, 0],1)
+            var map = L.map('map').setView([0, 0],1);
 
-            L.tileLayer
+            L.tileLayer('https://api.maptiler.com/maps/base-v4/tiles.json?key=FVEfTwLFYis22ItgjYur').addTo(map);
+
+            var marker = L.marker.addTo(map);
+
+            map.on('click', function(ev){
+                marker(ev.latlng);
+            });
+
         </script>
     </body>
 </html>
